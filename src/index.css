@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter+Tight:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "Lora", serif;
+  --font-utility: "Inter Tight", sans-serif;
+
+  --color-maroon: #3A1320;
+  --color-maroon-dark: #2D1419;
+  --color-cream: #F5F2ED;
+  --color-cream-light: #FAF8F5;
+  --color-gold: #B49258;
+  --color-gold-bright: #D4B373;
+  --color-ink: #141414;
+  --color-ink-soft: #444444;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-ink font-body leading-relaxed antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-ink;
+  }
+
+  /* Utility for small caps / eyebrows */
+  .eyebrow {
+    @apply font-utility text-[10px] uppercase tracking-[0.3em] font-semibold text-gold;
+  }
+
+  .caption {
+    @apply text-[11px] text-ink/60 uppercase tracking-widest;
+  }
+
+  /* Custom utility for oldstyle figures */
+  .onum {
+    font-feature-settings: "onum";
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-6xl mx-auto px-8 py-16 md:py-28;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full font-body text-[10px] uppercase tracking-[0.2em] font-bold transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-ink text-cream hover:bg-gold;
+  }
+
+  .btn-outline {
+    @apply border border-ink/20 text-ink hover:bg-ink hover:text-cream;
+  }
+
+  .card-premium {
+    @apply bg-white/50 backdrop-blur-xl border border-white/30 rounded-[5px] p-10 transition-all duration-500 shadow-[0_8px_32px_0_rgba(45,20,25,0.06)] hover:shadow-[0_12px_48px_0_rgba(45,20,25,0.1)] hover:bg-white/60;
+  }
+
+  .hairline {
+    @apply h-[1px] w-full bg-ink/10;
+  }
+}
+
+/* Custom scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for cleaner look if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
