@@ -4,7 +4,7 @@ export function SingleDaySection() {
   return (
     <section
       id="single-day"
-      className="bg-ink text-cream py-24 overflow-hidden relative"
+      className="bg-maroon text-cream py-24 overflow-hidden relative"
     >
       <div className="absolute inset-y-0 right-0 w-full md:w-3/4 opacity-[0.15] pointer-events-none">
         <img
